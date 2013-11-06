@@ -24,7 +24,7 @@ db.define_table('Recipe',
 	Field('Author', default=get_name()), 
 	Field('Instructions','text'))
 	
-db.define_table('recipe_needs',
+db.define_table('RecipeNeeds',
 	Field('recipe_id')
 	Field('ingredient_id'))
 	
@@ -33,5 +33,5 @@ db.define_table('ShopList',
 	Field('created_on', 'date', default=request.now),
 	Field('user_email', default=get_email()),
 	Field('author', default=get_name()),
-	Field(''),
+	Field('recipes', 'list:string'),
 	Field('finished','boolean',default=False)) 
