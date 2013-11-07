@@ -1,35 +1,74 @@
-{{left_sidebar_enabled,right_sidebar_enabled=False,('message' in globals())}}
 {{extend 'layout.html'}}
+<html>
+<head>
+	<link rel="stylesheet" href="{{=URL('static','css/style.css')}}">
+</head>
+<body id="index">
+	<center>
+	
+	<!--Index Pseudo-Code:
+	 
+		If user is logged in,
+			present options to proceed with app.
+		 else,
+		 	give two buttons [register || login]
+		 	if register, show registration form in index.
+		 	else if login, show login form. 
+	  --!>
+		 	
+	{{if auth.user:}}
+	
+		<a href="{{=URL('default', 'ingredients')}}"><img width="200px" src="{{=URL('../../static/images/ing.png')}}"/>
+		<a href="{{=URL('default', 'recipes')}}"><img width="200px" src="{{=URL('../../static/images/rp.png')}}"/>
+		<br>
+		<a href="{{=URL('default', 'shoplist')}}"><img width="200px" src="{{=URL('../../static/images/sl.png')}}"/>
+		<a href="{{=URL('default', 'support')}}"><img width="200px" src="{{=URL('../../static/images/support.png')}}"/>
+		
+	{{else:}}
+		<!-- Custom login form: https://groups.google.com/forum/#!topic/web2py/DyspJUl_IMM --!>
+		{{form=auth.login()}}
+		{{=form.custom.begin}}
+			Username:
+			{{=form.custom.widget.username}}
+		<br>
+			Password:
+			{{=form.custom.widget.password}}
+		<br>
+			{{=form.custom.submit}}
+		
+		<!-- indention junk for Login button -->
+				&nbsp&nbsp&nbsp&nbsp
+				&nbsp&nbsp&nbsp&nbsp
+				&nbsp&nbsp&nbsp&nbsp
+				&nbsp&nbsp&nbsp&nbsp
+				&nbsp&nbsp&nbsp&nbsp
+				&nbsp&nbsp&nbsp&nbsp
+				&nbsp&nbsp&nbsp&nbsp
+				&nbsp&nbsp&nbsp&nbsp
+				&nbsp&nbsp&nbsp
+		<!-- Leave this here until someone figures out how to use a for loop 
+		     in html without javascript --!>
+		     
+		{{=form.custom.end}}
+		{{pass}}
+		
+		
+		<br><br>
+		<br><br>
+		<br><br>
 
-{{if 'message' in globals():}}
-<h3>{{=message}}</h3>
-
-<h4>{{=T('How did you get here?')}}</h4>
-<ol>
-  <li>{{=T('You are successfully running web2py')}}</li>
-  <li>{{=XML(T('You visited the url %s', A(request.env.path_info,_href=request.env.path_info)))}}</li>
-  <li>{{=XML(T('Which called the function %s located in the file %s',
-             (A(request.function+'()',_href='#'),
-              A('web2py/applications/%(application)s/controllers/%(controller)s.py'%request,
-               _href=URL('admin','default','peek', args=(request.application,'controllers',request.controller+'.py'))))))}}</li>
-  <li>{{=XML(T('The output of the file is a dictionary that was rendered by the view %s',
-           A('web2py/applications/%(application)s/views/%(controller)s/index.html'%request,
-           _href=URL('admin','default','peek',args=(request.application,'views',request.controller,'index.html')))))}}</li>
-  <li>{{=T('You can modify this application and adapt it to your needs')}}</li>
-</ol>
-{{elif 'content' in globals():}}
-{{=content}}
-{{else:}}
-{{=BEAUTIFY(response._vars)}}
-{{pass}}
-
-{{block right_sidebar}}
-{{=A(T("Administrative Interface"), _href=URL('admin','default','index'), _class='btn',
-     _style='margin-top: 1em;')}}
-<h6>{{=T("Don't know what to do?")}}</h6>
-<ul>
-  <li>{{=A(T("Online examples"), _href=URL('examples','default','index'))}}</li>
-  <li><a href="http://web2py.com">web2py.com</a></li>
-  <li><a href="http://web2py.com/book">{{=T('Documentation')}}</a></li>
-</ul>
-{{end}}
+		
+		{{=A('Home', _href=URL('default', 'index'))}}
+		&nbsp&nbsp&nbsp&nbsp
+		{{=A('Ingredients', _href=URL('default', 'ingredients'))}}
+		&nbsp&nbsp&nbsp&nbsp
+		{{=A('Recipes', _href=URL('default', 'recipes'))}}
+		&nbsp&nbsp&nbsp&nbsp
+		{{=A('ShopList', _href=URL('default', 'shoplist'))}}
+		&nbsp&nbsp&nbsp&nbsp
+		{{=A('Support', _href=URL('default', 'support'))}} 
+		
+	{{pass}}
+	</center>
+</body>
+</html>

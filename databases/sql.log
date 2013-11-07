@@ -53,3 +53,589 @@ CREATE TABLE auth_cas(
     renew CHAR(1)
 );
 success!
+timestamp: 2013-11-06T14:43:21.817000
+ALTER TABLE auth_user ADD username CHAR(128);
+success!
+timestamp: 2013-11-06T14:43:35.883000
+CREATE TABLE users(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username CHAR(512) UNIQUE,
+    password CHAR(512),
+    first_name CHAR(512),
+    last_name CHAR(512),
+    email CHAR(512),
+    sList CHAR(512)
+);
+success!
+timestamp: 2013-11-06T14:43:43.364000
+CREATE TABLE ingredients(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dairy CHAR(512),
+    grains CHAR(512),
+    vegetables CHAR(512),
+    fruits CHAR(512),
+    meat CHAR(512),
+    fish CHAR(512),
+    bread CHAR(512),
+    cereals CHAR(512),
+    fats CHAR(512)
+);
+success!
+timestamp: 2013-11-06T14:43:52.826000
+CREATE TABLE recipes(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Algeria CHAR(512),
+    Argentina CHAR(512),
+    Australia CHAR(512),
+    Brazil CHAR(512),
+    Cameroon CHAR(512),
+    Canada CHAR(512),
+    Chile CHAR(512),
+    China CHAR(512),
+    Cote_dIvoire CHAR(512),
+    Cuba CHAR(512),
+    Czech_Republic CHAR(512),
+    Egypt CHAR(512),
+    Ethiopia CHAR(512),
+    France CHAR(512),
+    Germany CHAR(512),
+    Ghana CHAR(512),
+    Guatemala CHAR(512),
+    Haiti CHAR(512),
+    Hungary CHAR(512),
+    India CHAR(512),
+    Indonesia CHAR(512),
+    Iran CHAR(512),
+    Iraq CHAR(512),
+    Ireland CHAR(512),
+    Islands_of_the_Pacific CHAR(512),
+    Israel CHAR(512),
+    Italy CHAR(512),
+    Jamaica CHAR(512),
+    Japan CHAR(512),
+    Kazakhstan CHAR(512),
+    Kenya CHAR(512),
+    Korea CHAR(512),
+    Lebanon CHAR(512),
+    Liberia CHAR(512),
+    Mexico CHAR(512),
+    Morocco CHAR(512),
+    Mozambique CHAR(512),
+    Nigeria CHAR(512),
+    Pakistan CHAR(512),
+    Peru CHAR(512),
+    Philippines CHAR(512),
+    Poland CHAR(512),
+    Russia CHAR(512),
+    Saudi_Arabia CHAR(512),
+    Slovenia CHAR(512),
+    South_Africa CHAR(512),
+    Spain CHAR(512),
+    Sweden CHAR(512),
+    Tanzania CHAR(512),
+    Thailand CHAR(512),
+    Turkey CHAR(512),
+    Ukraine CHAR(512),
+    United_Kingdom CHAR(512),
+    United_States CHAR(512),
+    Vietnam CHAR(512),
+    Zimbabwe CHAR(512),
+    Other CHAR(512)
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2013-11-06T18:21:09.859000
+CREATE TABLE index_page(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    logistration CHAR(512)
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2013-11-06T19:47:56.120000
+ALTER TABLE ingredients ADD ingredient_id CHAR(512);
+timestamp: 2013-11-06T19:47:56.181000
+ALTER TABLE ingredients ADD measurement CHAR(512);
+success!
+timestamp: 2013-11-06T19:47:56.233000
+CREATE TABLE recipe(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title CHAR(512),
+    Author CHAR(512),
+    Instructions TEXT
+);
+success!
+timestamp: 2013-11-06T19:47:56.294000
+CREATE TABLE recipe_choices(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Algeria CHAR(512),
+    Argentina CHAR(512),
+    Australia CHAR(512),
+    Brazil CHAR(512),
+    Cameroon CHAR(512),
+    Canada CHAR(512),
+    Chile CHAR(512),
+    China CHAR(512),
+    Cote_dIvoire CHAR(512),
+    Cuba CHAR(512),
+    Czech_Republic CHAR(512),
+    Egypt CHAR(512),
+    Ethiopia CHAR(512),
+    France CHAR(512),
+    Germany CHAR(512),
+    Ghana CHAR(512),
+    Guatemala CHAR(512),
+    Haiti CHAR(512),
+    Hungary CHAR(512),
+    India CHAR(512),
+    Indonesia CHAR(512),
+    Iran CHAR(512),
+    Iraq CHAR(512),
+    Ireland CHAR(512),
+    Islands_of_the_Pacific CHAR(512),
+    Israel CHAR(512),
+    Italy CHAR(512),
+    Jamaica CHAR(512),
+    Japan CHAR(512),
+    Kazakhstan CHAR(512),
+    Kenya CHAR(512),
+    Korea CHAR(512),
+    Lebanon CHAR(512),
+    Liberia CHAR(512),
+    Mexico CHAR(512),
+    Morocco CHAR(512),
+    Mozambique CHAR(512),
+    Nigeria CHAR(512),
+    Pakistan CHAR(512),
+    Peru CHAR(512),
+    Philippines CHAR(512),
+    Poland CHAR(512),
+    Russia CHAR(512),
+    Saudi_Arabia CHAR(512),
+    Slovenia CHAR(512),
+    South_Africa CHAR(512),
+    Spain CHAR(512),
+    Sweden CHAR(512),
+    Tanzania CHAR(512),
+    Thailand CHAR(512),
+    Turkey CHAR(512),
+    Ukraine CHAR(512),
+    United_Kingdom CHAR(512),
+    United_States CHAR(512),
+    Vietnam CHAR(512),
+    Zimbabwe CHAR(512),
+    Other CHAR(512),
+    recipe_id CHAR(512)
+);
+success!
+timestamp: 2013-11-06T19:47:56.340000
+CREATE TABLE RecipeNeeds(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    recipe_id CHAR(512),
+    ingredient_id CHAR(512)
+);
+success!
+timestamp: 2013-11-06T19:47:56.385000
+CREATE TABLE ShopList(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    created_on DATE,
+    user_email CHAR(512),
+    author CHAR(512),
+    recipes TEXT,
+    finished CHAR(1)
+);
+success!
+success!
+success!
+success!
+timestamp: 2013-11-06T20:00:40.251000
+CREATE TABLE dairy(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    measurement CHAR(512)
+);
+success!
+timestamp: 2013-11-06T20:00:40.297000
+CREATE TABLE grains(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    measurement CHAR(512)
+);
+success!
+timestamp: 2013-11-06T20:00:40.345000
+CREATE TABLE vegetables(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    measurement CHAR(512)
+);
+success!
+timestamp: 2013-11-06T20:00:40.391000
+CREATE TABLE fruits(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    measurement CHAR(512)
+);
+success!
+timestamp: 2013-11-06T20:00:40.444000
+CREATE TABLE meat(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    measurement CHAR(512)
+);
+success!
+timestamp: 2013-11-06T20:00:40.491000
+CREATE TABLE fish(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    measurement CHAR(512)
+);
+success!
+timestamp: 2013-11-06T20:00:40.536000
+CREATE TABLE bread(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    measurement CHAR(512)
+);
+success!
+timestamp: 2013-11-06T20:00:40.581000
+CREATE TABLE cereals(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    measurement CHAR(512)
+);
+success!
+timestamp: 2013-11-06T20:00:40.668000
+CREATE TABLE fats(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    measurement CHAR(512)
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!

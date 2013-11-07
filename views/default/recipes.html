@@ -1,0 +1,32 @@
+{{extend 'layout.html'}}
+<html>
+<head>
+	<link rel="stylesheet" href="{{=URL('static','css/style.css')}}">
+</head>
+
+<h1>All Recipes</h1>
+
+<h2>
+    Page Content:
+</h2>
+<body id="recipes">
+   1) A list of all public recipes that users have created on to this site that are followed by a link. The link will lead to a page that shares the recipe ingredients and instructions.
+</body>
+<body>
+    2) Users that access this page will only be able to view the name of the recipe and follow the given link for each recipe.
+</body>
+<p>
+    {{=A('Back', _href=URL('default', 'index'))}}
+</p>
+
+<center>
+	{{=A('Home', _href=URL('default', 'index'))}}
+	&nbsp&nbsp&nbsp&nbsp
+	{{=A('Ingredients', _href=URL('default', 'ingredients'))}}
+	&nbsp&nbsp&nbsp&nbsp
+	{{=A('Recipes', _href=URL('default', 'recipes'))}}
+	&nbsp&nbsp&nbsp&nbsp
+	{{=A('ShopList', _href=URL('default', 'shoplist'))}}
+	&nbsp&nbsp&nbsp&nbsp
+	{{=A('Support', _href=URL('default', 'support'))}}
+</center>

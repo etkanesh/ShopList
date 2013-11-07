@@ -1,0 +1,32 @@
+{{extend 'layout.html'}}
+
+<html>
+<head>
+	<link rel="stylesheet" href="{{=URL('static','css/style.css')}}">
+</head>
+
+<h1>
+    Support Page
+</h1>
+
+<body id="support">
+    This page will be used for users to contact us with suggestions or complaints.
+</body>
+
+
+<p>
+   {{=A('Back', _href=URL('default', 'index'))}} 
+</p>
+
+<center>
+	{{=A('Home', _href=URL('default', 'index'))}}
+	&nbsp&nbsp&nbsp&nbsp
+	{{=A('Ingredients', _href=URL('default', 'ingredients'))}}
+	&nbsp&nbsp&nbsp&nbsp
+	{{=A('Recipes', _href=URL('default', 'recipes'))}}
+	&nbsp&nbsp&nbsp&nbsp
+	{{=A('ShopList', _href=URL('default', 'shoplist'))}}
+	&nbsp&nbsp&nbsp&nbsp
+	{{=A('Support', _href=URL('default', 'support'))}}
+</center>
+</html>
