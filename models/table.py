@@ -68,7 +68,10 @@ db.define_table('fats',
 db.define_table('recipe',
 	Field('title'),
 	Field('Author', default=get_name()), 
-	Field('Instructions','text'))
+	Field('Instructions','text')
+	Field('Email', default=get_email()),
+	Field('Ingredients', 'text'),
+	Field('Comments', 'text'))
 
 """Database of Recipes:
     - Sort recipes based on country of origin
