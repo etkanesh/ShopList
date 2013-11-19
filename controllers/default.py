@@ -12,11 +12,69 @@
 def index():       
     return dict()
 
-def addRecipes():
-    return dict()
+def myRecipes():
+    q = db.recipe
+    grid = SQLFORM.grid((db.recipe.Email==auth.user.email ),
+        searchable=True,
+        fields=[db.recipe.title, db.recipe.Author, db.recipe.Email],
+        csv=True, 
+        details=False, create=False, editable=False, deletable=True,
+        links=[
+            dict(header=T('View'), 
+                 body = lambda r: A('View', _class='btn', 
+                                    _href=URL('default', 'viewRecipes',
+                                              args=[r.id])),
+            ),
+            dict(header=T('Edit'), 
+                 body = lambda r: A('Edit', _class='btn', 
+                                    _href=URL('default', 'editRecipes',
+                                              args=[r.id])),
+            )
+            ],
+        )
+    return dict(grid=grid)
 
+def addRecipes():
+    page = request.vars.page
+    form = SQLFORM(db.recipe, fields=['title', 'Ingredients', 'Instructions'])
+    if form.process().accepted:
+        my_record = db(db.recipe.id > 0).select().last()
+        redirect(URL('default', 'recipes'))
+    return dict(form=form)    
+    
+def editRecipes():
+    my_record = db.recipe(request.args(0))
+    form = SQLFORM(db.recipe, record=my_record, fields=['title', 'Author', 'Ingredients', 'Instructions'])
+    if form.process().accepted:
+        redirect(URL('default', 'recipes'))
+    return dict(form=form)    
+
+def viewRecipes():
+    my_record = db.recipe(request.args(0))
+    form = SQLFORM(db.recipe, record=my_record, readonly=True,
+                   fields=['title', 'Author', 'Ingredients', 'Instructions', 'Comments'])
+    if form.process().accepted:
+        redirect(URL('default', 'viewRecipes', args=[r.id]))
+    return dict(form=form)
+    
 def recipes():
-    return dict()
+    q = db.recipe
+    grid = SQLFORM.grid(q,
+        searchable=True,
+        fields=[db.recipe.title, db.recipe.Author, db.recipe.Email],
+        csv=True, 
+        details=False, create=False, editable=False, deletable=True,
+        links=[
+            dict(header=T('View'), 
+                 body = lambda r: A('View', _class='btn', 
+                                    _href=URL('default', 'viewRecipes', args=[r.id]
+                                              )),
+            ),
+            ],
+        )
+    return dict(grid=grid)
+    
+
 
 def addIngredients():
     return dict()
