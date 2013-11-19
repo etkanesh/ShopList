@@ -1,0 +1,12 @@
+{{extend 'layout.html'}}
+<head>
+	<link rel="stylesheet" href="{{=URL('static','css/style.css')}}">
+</head>
+<body id="recipes">
+</body>
+
+<h1>My Recipe</h1>
+<p>
+{{=A('Back', _href=URL('default', 'recipes'))}}
+</p>
+{{=BEAUTIFY(response._vars)}}
